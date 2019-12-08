@@ -17,7 +17,7 @@ def register():
     k=db.patient.insert_one({"name":name,"age":age,"sex":sex,"disease":dis})
     try:
         k1=db.disease.find_one({"name":dis})
-        count=int(k1["count"])+1
+        cou/nt=int(k1["count"])+1
         print(count)
         db.disease.update_one({"name":dis},{"$set":{"count":count}})
     except:
